@@ -34,4 +34,3 @@ kd_b = 2*w0_b3*Jm - K
 //pi
 kp_b1 = 1.4*w0_b2*Jm - K
 ki_b1 = (w0_b2^2)*Jm
-
