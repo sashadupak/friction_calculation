@@ -7,6 +7,8 @@ ki = 67.5
 kd = 0.1
 integral = 0
 err_old = 0
+km = 0.5
+R = 6.1
 mA = LargeMotor('outA')
 try:
     mA.position = 0
@@ -20,7 +22,7 @@ try:
             derivative = (err - err_old)*kd
             err_old = err
             u = kp * err + integral + derivative
-            u = u*100/8.4
+            u = (u*km/R)*100/8.4
             if abs(u)>100:
                 u=math.copysign(100,u)
             mA.run_direct(duty_cycle_sp=u)
